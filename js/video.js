@@ -7,7 +7,7 @@ window.addEventListener("load", function() {
 
 document.querySelector("#play").addEventListener("click", function() {
     video.play();
-    console.log(`Volume: ${video.volume}`);
+    document.querySelector("#volume").textContent = `Volume: ${video.volume.toFixed(2)*10}`;
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -37,7 +37,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 document.querySelector("#slider").addEventListener("input", function() {
     video.volume = this.value / 100;
-    document.querySelector("#volume").textContent = `Volume is: ${video.volume.toFixed(2)*100}`;
+    document.querySelector("#volume").textContent = `Volume is: ${video.volume.toFixed(2)*100}%`;
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
